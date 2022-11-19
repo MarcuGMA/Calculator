@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #input {
+            width: 200px;
+            border: 1px solid rgba(0, 0, 0, .3);
+            font-size: 15px;
+            padding: 10px;
+            display: block;
+        }
+
+        .buttons {
+            display: flex;
+        }
+
+        .numbers {
+            width: 90px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .operations {
+            margin-left: 20px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <span id="input"></span>
+    <div class="buttons">
+        <div class="numbers">
+            <button onClick="onButtonclick(0)">0</button>
+            <button onClick="onButtonclick(1)">1</button>
+            <button onClick="onButtonclick(2)">2</button>
+            <button onClick="onButtonclick(3)">3</button>
+            <button onClick="onButtonclick(4)">4</button>
+            <button onClick="onButtonclick(5)">5</button>
+            <button onClick="onButtonclick(6)">6</button>
+            <button onClick="onButtonclick(7)">7</button>
+            <button onClick="onButtonclick(8)">8</button>
+            <button onClick="onButtonclick(9)">9</button>
+        </div>
+        <div class="operations">
+            <button onClick="onButtonclick('+')">+</button>
+            <button onClick="onButtonclick('-')">-</button>
+            <button onClick="onButtonclick('/')">/</button>
+            <button onClick="onButtonclick('*')">*</button>
+        </div>
+    </div>
+
+    <script>
+        let textInput = '';
+        const inputToShow = document.getElementById("input");
+
+        function onButtonclick (clickedNumber) {
+            textInput = textInput + clickedNumber;
+            inputToShow.innerText = textInput;
+        }
+
+    </script>
+</body>
+</html>
